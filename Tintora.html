@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TINTORA</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #00e5ff;
+      --secondary: #008cff;
+      --dark: #0b0b0b;
+      --glass: rgba(255,255,255,0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        url('https://media.post.rvohealth.io/wp-content/uploads/2023/12/close-up-man-eyes-closed-rainbow-spectrum-reflecting-on-face-1200x628-facebook.jpg')
+        center/cover fixed no-repeat;
+    }
+
+    /* ---------------- NAVBAR ---------------- */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--primary); }
+
+    /* ---------------- HERO ---------------- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 96px);
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .hero h2 {
+      font-size: 22px;
+      font-weight: 400;
+      margin-top: 10px;
+      color: var(--primary);
+      max-width: 800px;
+    }
+
+    .hero .btn {
+      margin-top: 30px;
+    }
+
+    /* ---------------- COMMON SECTIONS ---------------- */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .glass-box {
+      background: var(--glass);
+      border-radius: 20px;
+      padding: 50px 40px;
+      border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(12px);
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ---------------- BUTTON ---------------- */
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,229,255,0.4);
+    }
+
+    /* ---------------- FEATURES ---------------- */
+    .how-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .center-card {
+      grid-column: 2 / 3;
+    }
+
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .feature-item {
+      background: rgba(0,0,0,0.5);
+      padding: 30px 25px;
+      border-radius: 16px;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-6px);
+      background: rgba(0,0,0,0.65);
+    }
+
+    .feature-item h3 {
+      margin-bottom: 10px;
+      color: #00ff88;
+    }
+
+    /* ---------------- TESTIMONIALS ---------------- */
+    .testimonial {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .testimonial i { color: #ddd; }
+
+    /* ---------------- FOOTER ---------------- */
+    footer {
+      background: #000000;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover { color: #ffffff; }
+
+    /* ---------------- RESPONSIVE ---------------- */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      /* Center key step on mobile as well */
+      .how-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .center-card {
+        grid-column: auto;
+      }
+    }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">TINTORA</div>
+    <div>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>TINTORA</h1>
+    <h2>Helps you see the web through the eyes of color blindness</h2>
+    <a href="#features" class="btn">Explore Features</a>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="glass-box">
+      <h2>Key Features</h2>
+      <div class="features-grid how-grid">
+        <div class="feature-item">
+          <h3>1️⃣ Enable Extension</h3>
+          <p>Activate the Tintora browser extension with a single click on any website.</p>
+        </div>
+        <div class="feature-item">
+          <h3>2️⃣ Choose CVD Type</h3>
+          <p>Select the required color vision deficiency type to simulate real-world visual perception.</p>
+        </div>
+        <div class="feature-item">
+          <h3>3️⃣ Adjust Intensity</h3>
+          <p>Fine-tune the simulation strength using the intensity slider for better accuracy.</p>
+        </div>
+
+        <div class="feature-item center-card">
+          <h3>4️⃣ Get Suggestions</h3>
+          <p>Receive accessible color palette suggestions generated using intelligent analysis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="glass-box">
+      <h2>How Tintora Works</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3>1️⃣ Enable Extension</h3>
+          <p>Activate the Tintora browser extension with a single click on any website.</p>
+        </div>
+        <div class="feature-item">
+          <h3>2️⃣ Choose CVD Type</h3>
+          <p>Select the required color vision deficiency type to simulate real-world visual perception.</p>
+        </div>
+        <div class="feature-item">
+          <h3>3️⃣ Adjust Intensity</h3>
+          <p>Fine-tune the simulation strength using the intensity slider for better accuracy.</p>
+        </div>
+        <div class="feature-item center-card">
+          <h3>4️⃣ Get Suggestions</h3>
+          <p>Receive accessible color palette suggestions generated using intelligent analysis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="glass-box" style="text-align:center;">
+      <h2>Contact Us</h2>
+      <p>Have questions or found a bug? Reach out anytime.</p>
+      <a href="mailto:support@tintora.com" class="btn">support@tintora.com</a>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team">
+    <div class="glass-box">
+      <h2>Our Team</h2>
+      <div class="features-grid">
+        <div class="feature-item"><p><b>Sanuka Senanayake</b></p></div>
+        <div class="feature-item"><p><b>Sethuli Abeywickrama</b></p></div>
+        <div class="feature-item"><p><b>Himash Wittachchi</b></p></div>
+        <div class="feature-item"><p><b>Venumi Malkini</b></p></div>
+        <div class="feature-item"><p><b>Lakindu Rathugamage</b></p></div>
+        <div class="feature-item"><p><b>Dineru Jayawardhana</b></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Tintora App · All Rights Reserved<br><br>
+    <a href="mailto:support@tintora.com">support@tintora.com</a> |
+    <span>123 Tech Lane, San Francisco</span> |
+    <span>(555) 123‑4567</span>
+  </footer>
+
+</body>
+</html>
